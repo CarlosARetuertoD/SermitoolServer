@@ -2,12 +2,16 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
     <a href="{% url 'index' %}" class="logo d-flex align-items-center">
-      <h1 class="sitename">SERMITOOL</h1>
-      <span>.</span> 
+      <img 
+          src="{% static 'img/logoSermitool.png' %}" 
+          alt="SERMITOOL Logo" 
+          class="hero-logo"
+          height="65px"
+          style="max-height:none !important;"
+        />
     </a>
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="{% url 'index' %}">Inicio</a></li>
         <li><a href="{% url 'services' %}">Servicios</a></li>
         <li class="dropdown"><a href="{% url 'products' %}"><span>Productos</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>

@@ -179,17 +179,16 @@ h6 {
   --heading-color: #ffffff; /* Variable local para color de encabezado en el header, blanco */
   color: var(--default-color); /* Aplica el color predeterminado (blanco) para el texto del header */
   background-color: var(--background-color); /* Aplica el fondo transparente definido localmente */
-  padding: 20px 0; /* Padding vertical de 20px */
+  padding: 40px 0; /* Padding vertical de 20px */
   transition: all 0.5s; /* Transición de 0.5s para cualquier cambio en el header */
   z-index: 997; /* Define el nivel de apilamiento (stacking order) para situarlo por encima de otros elementos */
 }
 
-/* Estilos para la imagen dentro del logo ubicado en el header */
 .header .logo img {
-  max-height: 32px; /* Altura máxima de la imagen es 32px */
-  margin-right: 8px; /* Margen a la derecha para separar la imagen del texto del logo */
+  max-height: 70px !important;   /* Aumenta la altura máxima del logo */
+  width: auto !important;         /* Ajusta el ancho proporcionalmente */
+  margin-right: 20px !important;  /* Un poco más de espacio junto al texto */
 }
-
 /* Estilos para el elemento h1 dentro del logo del header */
 .header .logo h1 {
   font-size: 24px; /* Tamaño de fuente de 24px */
