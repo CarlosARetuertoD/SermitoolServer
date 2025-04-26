@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Sermitool - Productos</title>
+    <meta name="description" content="Proveedores de equipos OEM y repuestos para minería subterránea.">
+    <meta name="keywords" content="Sermitool, minería, perforación, OEM, repuestos, Perú">
+    
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+    <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect"> 
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+  </head>
+
+  <body class="projects-page">
+
+    {% include 'partials/header.html' %}
+
+    <main class="main">
+
+      {% include 'partials/head_page.html' with page_title='Nuestros Productos' breadcrumb_current='Productos' %}
+
+      <section id="products" class="products section">
+        <div class="container">
+          <!-- Filtro para clasificar productos -->
+          <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+            <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+              <li data-filter="*" class="filter-active">Todos</li>
+              <li data-filter=".filter-perforadoras">Perforadoras</li>
+              <li data-filter=".filter-repuestos">Repuestos</li>
+              <li data-filter=".filter-sostenimiento">Sostenimiento</li>
+              <li data-filter=".filter-design">Iluminación</li>
+            </ul>
+            <!-- Grid de productos -->
+            <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+              <!-- Producto 1 -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-perforadoras">
+                <div class="portfolio-content h-100">
+                  <img src="{% static 'img/products/product-1.jpg' %}" class="img-fluid" alt="Jackleg S250">
+                  <div class="portfolio-info">
+                    <h4>Jackleg S250</h4>
+                    <p>Perforadora neumática de avance, ideal para túneles.</p>
+                    <a href="{% static 'img/products/product-1.jpg' %}" class="glightbox preview-link" title="Vista rápida">
+                      <i class="bi bi-zoom-in"></i>
+                    </a>
+                    <a href="{% url 'item' %}" class="details-link" title="Ver más">
+                      <i class="bi bi-link-45deg"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Producto 2 -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-repuestos">
+                <div class="portfolio-content h-100">
+                  <img src="{% static 'img/products/product-2.jpg' %}" class="img-fluid" alt="Kit hidráulico">
+                  <div class="portfolio-info">
+                    <h4>Kit hidráulico</h4>
+                    <p>Componentes OEM para circuitos hidráulicos mineros.</p>
+                    <a href="{% static 'img/products/product-2.jpg' %}" class="glightbox preview-link" title="Vista rápida">
+                      <i class="bi bi-zoom-in"></i>
+                    </a>
+                    <a href="{% url 'item' %}" class="details-link" title="Ver más">
+                      <i class="bi bi-link-45deg"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Producto 3 -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-sostenimiento">
+                <div class="portfolio-content h-100">
+                  <img src="{% static 'img/products/product-3.jpg' %}" class="img-fluid" alt="Soporte tipo split set">
+                  <div class="portfolio-info">
+                    <h4>Soporte tipo split set</h4>
+                    <p>Refuerzo mecánico para techos inestables en minería.</p>
+                    <a href="{% static 'img/products/product-3.jpg' %}" class="glightbox preview-link" title="Vista rápida">
+                      <i class="bi bi-zoom-in"></i>
+                    </a>
+                    <a href="{% url 'item' %}" class="details-link" title="Ver más">
+                      <i class="bi bi-link-45deg"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Producto 4 -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
+                <div class="portfolio-content h-100">
+                  <img src="{% static 'img/products/product-4.jpg' %}" class="img-fluid" alt="Reflector LED IP68">
+                  <div class="portfolio-info">
+                    <h4>Reflector LED IP68</h4>
+                    <p>Iluminación eficiente para ambientes polvorientos y húmedos.</p>
+                    <a href="{% static 'img/products/product-4.jpg' %}" class="glightbox preview-link" title="Vista rápida">
+                      <i class="bi bi-zoom-in"></i>
+                    </a>
+                    <a href="{% url 'item' %}" class="details-link" title="Ver más">
+                      <i class="bi bi-link-45deg"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    </main>
+
+    {% include 'partials/footer.html' %}
+
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+      <i class="bi bi-arrow-up-short"></i> 
+    </a>
+
+    <div id="preloader"></div>
+
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+  
+</html>

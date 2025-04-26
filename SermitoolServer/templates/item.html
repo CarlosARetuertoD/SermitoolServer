@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8"> 
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
+    <title>Sermitool - Item</title>
+    <meta name="description" content="Producto técnico - Repuesto industrial para minería subterránea.">
+    <meta name="keywords" content="Sermitool, productos, repuestos mineros, maquinaria">
+
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+    <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect"> 
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+  </head>
+
+  <body class="project-details-page">
+   
+    {% include 'partials/header.html' %}
+
+    <main class="main">
+    
+      {% include 'partials/head_page.html' with page_title='Item Generico' breadcrumb_current='Item' %}
+
+      <section id="project-details" class="item section">
+        <!-- Sección con id "project-details" y clases para estilos (project-details, section) -->
+        <div class="container" data-aos="fade-up">
+          <!-- Contenedor central con animación "fade-up" al hacer scroll -->
+          
+          <!-- Detalles del producto -->
+          <div class="row justify-content-between gy-4 mt-4">
+            <!-- Fila con distribución "justify-content-between", separación vertical (gy-4) y margen superior (mt-4) -->
+            
+            <!-- DESCRIPCIÓN DEL PRODUCTO -->
+            <div class="col-lg-8" data-aos="fade-up">
+              <!-- Columna de 8/12 para la descripción, con animación "fade-up" -->
+              <div class="portfolio-description">
+                <!-- Contenedor de la descripción del producto -->
+                <h2>Producto 1 - Componente para Perforación</h2>
+                <!-- Título del producto -->
+                <p>
+                  Componente diseñado para aplicaciones mineras de alto impacto, fabricado con precisión y resistencia para condiciones de trabajo extremo.
+                </p>
+                <!-- Primer párrafo descriptivo -->
+                <p>
+                  Ideal para labores subterráneas que demandan durabilidad, facilidad de mantenimiento y compatibilidad con maquinaria existente en faena.
+                </p>
+                <!-- Segundo párrafo descriptivo -->
+                <p>
+                  Fabricado bajo especificaciones OEM, asegura desempeño constante y mínimo desgaste.
+                </p>
+                <!-- Tercer párrafo descriptivo -->
+                <ul>
+                  <!-- Lista de características o beneficios del producto -->
+                  <li>Alta resistencia a abrasión y fatiga.</li>
+                  <li>Optimizado para perforación en galerías.</li>
+                  <li>Construcción robusta, ideal para mina subterránea.</li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- INFORMACIÓN TÉCNICA DEL PRODUCTO -->
+            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+              <!-- Columna de 3/12 para la ficha técnica, con animación y un retardo adicional -->
+              <div class="portfolio-info">
+                <!-- Contenedor para la información técnica -->
+                <h3>Ficha Técnica</h3>
+                <!-- Título de la ficha técnica -->
+                <ul>
+                  <!-- Lista de información técnica -->
+                  <li><strong>Categoría</strong>: Repuestos Mineros</li>
+                  <li><strong>Fabricante</strong>: NASA Engineering</li>
+                  <li><strong>Origen</strong>: Sudáfrica</li>
+                  <li><strong>Disponibilidad</strong>: Stock permanente</li>
+                </ul>
+                <a href="#" class="btn-quote align-self-start">Solicitar cotización</a>
+                <!-- Botón que permite solicitar una cotización; la clase "btn-visit" estiliza el botón -->
+              </div>
+            </div>
+          </div>
+
+          <!-- CARRUSEL DE IMÁGENES -->
+          <div class="portfolio-details-slider swiper init-swiper">
+            <!-- Contenedor para el slider/carrusel de imágenes, usando Swiper -->
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                  "delay": 5000
+                },
+                "slidesPerView": "auto",
+                "navigation": {
+                  "nextEl": ".swiper-button-next",
+                  "prevEl": ".swiper-button-prev"
+                },
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                }
+              }
+            </script>
+            <!-- Configuración del Swiper en formato JSON embebido -->
+            <div class="swiper-wrapper align-items-center">
+              <!-- Contenedor de los slides, con alineación vertical centrada -->
+              <div class="swiper-slide">
+                <img src="assets/img/products/product-1.jpg" alt="">
+                <!-- Slide con imagen del producto; el atributo alt está vacío y se puede ajustar según necesidades -->
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/products/product-2.jpg" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/products/product-3.jpg" alt="">
+              </div>
+            </div>
+            <!-- Controles de navegación del slider -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+            <!-- Estos elementos se usan por Swiper para la navegación y la paginación -->
+          </div>
+        </div>
+      </section>
+      
+    </main>
+
+    {% include 'partials/footer.html' %}
+
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+      <i class="bi bi-arrow-up-short"></i> 
+    </a>
+
+    <div id="preloader"></div>
+
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+
+  </body>
+</html>

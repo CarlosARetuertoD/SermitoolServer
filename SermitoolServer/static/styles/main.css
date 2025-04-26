@@ -1,0 +1,1684 @@
+/* Declaración del selector raíz para definir variables globales */
+:root {
+  /* Define la fuente predeterminada para el sitio con una lista de respaldo */
+  --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* Define la fuente exclusiva para encabezados */
+  --heading-font: "Roboto",  sans-serif;
+  /* Define la fuente que usará el menú de navegación */
+  --nav-font: "Poppins",  sans-serif;
+}
+
+/*--------------------------------------------------------------*/
+/* Variables de colores globales. Actualiza estos valores para cambiar el esquema de colores en todo el sitio */
+/*--------------------------------------------------------------*/
+:root {
+  /* Color de fondo global para el sitio */
+  --background-color: #ffffff;
+  /* Color predeterminado para el texto principal */
+  --default-color: #364d59;
+  /* Color para encabezados, subencabezados y títulos */
+  --heading-color: #52565e;
+  /* Color de acento que se aplica a botones, enlaces y elementos destacados */
+  --accent-color: #f27237;
+  /* Color de superficie para fondos de tarjetas y otros elementos que se separan visualmente del fondo general */
+  --surface-color: #ffffff;
+  /* Color contrastante que se utiliza para textos sobre fondos oscuros o acentuados */
+  --contrast-color: #ffffff;
+}
+
+/*--------------------------------------------------------------*/
+/* Variables específicas para el menú de navegación */
+/*--------------------------------------------------------------*/
+:root {
+  /* Color por defecto para los enlaces del menú principal */
+  --nav-color: rgba(255, 255, 255, 0.55);
+  /* Color para los enlaces del menú cuando el cursor se sitúa sobre ellos o están activos */
+  --nav-hover-color: #ffffff;
+  /* Color de fondo para el menú en dispositivos móviles */
+  --nav-mobile-background-color: #ffffff;
+  /* Color de fondo para los elementos desplegables (dropdown) dentro del menú */
+  --nav-dropdown-background-color: #ffffff;
+  /* Color del texto para los enlaces en el dropdown */
+  --nav-dropdown-color: #212529;
+  /* Color del texto para los enlaces en el dropdown cuando se pasa el cursor (hover) */
+  --nav-dropdown-hover-color: #f27237;
+}
+
+/*--------------------------------------------------------------*/
+/* Clases para sobreescribir colores globales en secciones específicas */
+/*--------------------------------------------------------------*/
+
+/* Clase para una apariencia de fondo claro */
+.light-background {
+  --background-color: #f4f7f6; /* Fondo claro para la sección */
+  --surface-color: #ffffff;    /* Superficies blancas */
+}
+
+/* Clase para una apariencia de fondo oscuro */
+.dark-background {
+  --background-color: #060606; /* Fondo oscuro para la sección */
+  --default-color: #ffffff;     /* Texto en blanco para asegurar legibilidad */
+  --heading-color: #ffffff;     /* Encabezados en blanco */
+  --surface-color: #252525;     /* Fondo de superficie en tonos oscuros */
+  --contrast-color: #ffffff;    /* Color de contraste para elementos destacados */
+}
+
+/*--------------------------------------------------------------*/
+/* Configura el scroll suave a través de la página para enlaces de anclaje */
+/*--------------------------------------------------------------*/
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------*/
+/* Estilos generales y clases compartidas para todo el sitio    */
+/*--------------------------------------------------------------*/
+
+/* Estilos para el elemento body, que afectan a todo el documento */
+body {
+  color: var(--default-color); /* Aplica el color de texto global, definido en :root */
+  background-color: var(--background-color); /* Establece el fondo global usando la variable global */
+  font-family: var(--default-font); /* Aplica la fuente predeterminada definida en las variables globales */
+}
+
+/* Estilos para todos los enlaces (<a>), en estado normal */
+a {
+  color: var(--accent-color); /* Define el color de los enlaces usando la variable de acento */
+  text-decoration: none; /* Elimina la subrayado predeterminado en los enlaces */
+  transition: 0.3s; /* Agrega una transición suave de 0.3 segundos para cambios (por ejemplo, hover) */
+}
+
+/* Estilos para enlaces cuando se pasa el cursor por encima (hover) */
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%); 
+      /* Mezcla el color de acento con 25% de transparencia para un efecto sutil al hacer hover */
+  text-decoration: none; /* Se mantiene sin subrayado en hover */
+}
+
+/* Estilos para todos los encabezados (h1 a h6) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color); /* Aplica el color de encabezado definido globalmente */
+  font-family: var(--heading-font); /* Utiliza la fuente específica para encabezados definida en :root */
+}
+
+/* Estilos para un contenedor de mapas */
+.map-container {
+  border-radius: 8px; /* Aplica esquinas redondeadas de 8px al contenedor */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde del contenedor, importante para bordes redondeados */
+}
+
+/* PHP Email Form Messages - sección de mensajes del formulario de correo */
+
+/* Estilos para el mensaje de error en el formulario PHP (oculto por defecto) */
+.php-email-form .error-message {
+  display: none; /* Oculta el mensaje de error por defecto */
+  background: #df1529; /* Fondo rojo para indicar error */
+  color: #ffffff; /* Texto en blanco para un buen contraste */
+  text-align: left; /* Alineación del texto a la izquierda */
+  padding: 15px; /* Espaciado interno de 15px */
+  margin-bottom: 24px; /* Separación inferior de 24px */
+  font-weight: 600; /* Fuente semi-negrita para resaltar el error */
+}
+
+/* Estilos para el mensaje de éxito en el formulario PHP (oculto por defecto) */
+.php-email-form .sent-message {
+  display: none; /* Oculta el mensaje de envío por defecto */
+  color: #ffffff; /* Texto en blanco */
+  background: #059652; /* Fondo verde para indicar éxito */
+  text-align: center; /* Centra el texto */
+  padding: 15px; /* Espaciado interno de 15px */
+  margin-bottom: 24px; /* Margen inferior para separar de otros elementos */
+  font-weight: 600; /* Fuente semi-negrita */
+}
+
+/* Estilos para el mensaje de carga (loading) en el formulario PHP */
+.php-email-form .loading {
+  display: none; /* Oculto por defecto */
+  background: var(--surface-color); /* Fondo basado en la variable de superficie */
+  text-align: center; /* Texto centrado */
+  padding: 15px; /* Espaciado interno de 15px */
+  margin-bottom: 24px; /* Separación inferior */
+}
+
+/* Antes del elemento .loading se muestra un pseudo-elemento que actúa como indicador de carga */
+.php-email-form .loading:before {
+  content: ""; /* Contenido vacío, se usa únicamente para el efecto visual */
+  display: inline-block; /* Se comporta como elemento en línea */
+  border-radius: 50%; /* Forma circular */
+  width: 24px; /* Ancho de 24px */
+  height: 24px; /* Alto de 24px */
+  margin: 0 10px -6px 0; /* Márgenes para posicionar adecuadamente el indicador */
+  border: 3px solid var(--accent-color); /* Borde de 3px con el color de acento */
+  border-top-color: var(--surface-color); /* La parte superior del borde usa el color de superficie para crear efecto de giro */
+  animation: php-email-form-loading 1s linear infinite; /* Animación de giro de 1 segundo, lineal, infinita */
+}
+
+/* Definición de la animación para el indicador de carga del formulario PHP */
+@keyframes php-email-form-loading {
+  0% {
+    transform: rotate(0deg); /* Comienza sin rotación */
+  }
+  100% {
+    transform: rotate(360deg); /* Gira 360 grados, creando el efecto circular */
+  }
+}
+
+/*--------------------------------------------------------------*/
+/* Global Header                                              */
+/*--------------------------------------------------------------*/
+
+/* Estilos para el encabezado global (.header) */
+.header {
+  --background-color: rgba(255, 255, 255, 0); /* Variable local para fondo del header, inicialmente transparente */
+  --default-color: #ffffff; /* Variable local para color predeterminado en el header, blanco */
+  --heading-color: #ffffff; /* Variable local para color de encabezado en el header, blanco */
+  color: var(--default-color); /* Aplica el color predeterminado (blanco) para el texto del header */
+  background-color: var(--background-color); /* Aplica el fondo transparente definido localmente */
+  padding: 20px 0; /* Padding vertical de 20px */
+  transition: all 0.5s; /* Transición de 0.5s para cualquier cambio en el header */
+  z-index: 997; /* Define el nivel de apilamiento (stacking order) para situarlo por encima de otros elementos */
+}
+
+/* Estilos para la imagen dentro del logo ubicado en el header */
+.header .logo img {
+  max-height: 32px; /* Altura máxima de la imagen es 32px */
+  margin-right: 8px; /* Margen a la derecha para separar la imagen del texto del logo */
+}
+
+/* Estilos para el elemento h1 dentro del logo del header */
+.header .logo h1 {
+  font-size: 24px; /* Tamaño de fuente de 24px */
+  margin: 0; /* Sin margen */
+  font-weight: 700; /* Fuente en negrita */
+  color: var(--heading-color); /* Aplica el color de encabezado, que es blanco según las variables locales */
+}
+
+/* Estilos para el span dentro del logo del header */
+.header .logo span {
+  font-size: 24px; /* Tamaño de fuente de 24px */
+  padding-left: 1px; /* Padding pequeño a la izquierda */
+  font-family: var(--heading-font); /* Fuente definida para encabezados */
+  color: var(--color-primary); /* Usa la variable --color-primary para el color, la cual debe definirse en otro lugar */
+}
+
+/* Cuando el header tiene la clase .scrolled, se aplica una sombra para dar sensación de elevación */
+.scrolled .header {
+  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1); /* Sombra con 18px de desenfoque, color negro con baja opacidad */
+}
+
+/* Global Header on Scroll: Cambia las variables locales en el header al hacer scroll */
+.scrolled .header {
+  --background-color: rgba(255, 255, 255, 0.95); /* Fondo casi opaco al hacer scroll */
+  --heading-color: #3c3c3c; /* Cambia el color de los encabezados a un tono gris oscuro */
+  --nav-color: #3c3c3c; /* Establece el color de los enlaces de navegación a gris oscuro */
+  --nav-hover-color: #3c3c3c; /* Establece el color al pasar el mouse sobre los enlaces de navegación a gris oscuro */
+}
+
+/*--------------------------------------------------------------*/
+/* Navigation Menu                                           */
+/*--------------------------------------------------------------*/
+
+/* Desktop Navigation: Estilos para el menú de navegación en pantallas grandes */
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0; /* Sin padding para una alineación precisa */
+  }
+
+  /* Configuración de la lista de navegación */
+  .navmenu ul {
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina padding por defecto */
+    display: flex; /* Muestra los elementos en línea usando Flexbox */
+    list-style: none; /* Elimina viñetas o números de la lista */
+    align-items: center; /* Centra verticalmente los elementos de la lista */
+  }
+
+  .navmenu li {
+    position: relative; /* Posicionamiento relativo para permitir despliegues de submenús */
+  }
+
+  /* Establece padding y evita que el texto se rompa en varias líneas para cada elemento del menú principal */
+  .navmenu>ul>li {
+    white-space: nowrap; /* Impide que el texto se divida en líneas múltiples */
+    padding: 15px 14px; /* Padding vertical de 15px y horizontal de 14px */
+  }
+
+  .navmenu>ul>li:last-child {
+    padding-right: 0; /* Elimina el padding derecho en el último elemento */
+  }
+
+  /* Estilos para enlaces dentro de la navegación, tanto en estado normal como en foco */
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-color); /* Aplica el color de navegación a los enlaces */
+    font-size: 14px; /* Tamaño de fuente de 14px */
+    padding: 0 2px; /* Padding horizontal de 2px para ajustes finos */
+    font-family: var(--nav-font); /* Utiliza la fuente definida para navegación */
+    font-weight: 500; /* Peso de fuente medio */
+    display: flex; /* Muestra los enlaces como flex para alinear íconos y texto */
+    align-items: center; /* Centra verticalmente el contenido del enlace */
+    justify-content: space-between; /* Separa equitativamente el contenido (por ejemplo, texto e ícono) */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    transition: 0.3s; /* Transición suave para efectos hover y foco */
+    position: relative; /* Posiciona el elemento relativamente para permitir pseudo-elementos */
+    text-transform: uppercase; /* Transforma el texto a mayúsculas */
+  }
+
+  /* Estilos para los íconos dentro de los enlaces de navegación */
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px; /* Tamaño de fuente para íconos (12px) */
+    line-height: 0; /* Sin interlineado, para centrar el ícono */
+    margin-left: 5px; /* Espacio a la izquierda para separar del texto */
+    transition: 0.3s; /* Transición para cambios en el ícono */
+  }
+
+  /* Pseudo-elemento :before para crear una línea decorativa en los enlaces del menú */
+  .navmenu>ul>li>a:before {
+    content: ""; /* Contenido vacío, sirve solo para decoración */
+    position: absolute; /* Posicionamiento absoluto respecto al enlace */
+    height: 2px; /* Altura de la línea: 2px */
+    bottom: -6px; /* Posicionado 6px debajo del enlace */
+    left: 0; /* Alineado a la izquierda */
+    background-color: var(--accent-color); /* Color de la línea basado en el acento */
+    visibility: hidden; /* Oculto por defecto */
+    width: 0px; /* Sin ancho inicialmente */
+    transition: all 0.3s ease-in-out 0s; /* Transición suave en todas las propiedades */
+  }
+
+  /* Al hacer hover sobre el enlace, o cuando está activo, se muestra y expande la línea decorativa */
+  .navmenu a:hover:before,
+  .navmenu li:hover>a:before,
+  .navmenu .active:before {
+    visibility: visible; /* Hace visible el pseudo-elemento */
+    width: 100%; /* Expande la línea hasta el ancho completo del enlace */
+  }
+
+  /* Cambio de color en enlaces al hacer hover o cuando están activos */
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-hover-color); /* Aplica el color de hover de navegación */
+  }
+
+  /* Estilos para el submenú desplegable (dropdown) */
+  .navmenu .dropdown ul {
+    margin: 0; /* Sin margen */
+    padding: 10px 0; /* Padding vertical de 10px */
+    background: var(--nav-dropdown-background-color); /* Fondo para el dropdown */
+    display: block; /* Se muestra como bloque */
+    position: absolute; /* Posición absoluta respecto al elemento padre */
+    visibility: hidden; /* Oculto inicialmente */
+    left: 14px; /* Posicionado 14px desde la izquierda */
+    top: 130%; /* Ubicado 130% por debajo del enlace padre */
+    opacity: 0; /* Totalmente transparente al inicio */
+    transition: 0.3s; /* Transición para la aparición del dropdown */
+    border-radius: 4px; /* Bordes redondeados de 4px */
+    z-index: 99; /* Prioridad de apilamiento para mostrarse encima */
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad al dropdown */
+  }
+
+  /* Cada elemento dentro del dropdown tendrá un ancho mínimo para consistencia */
+  .navmenu .dropdown ul li {
+    min-width: 200px; /* Ancho mínimo de 200px para cada ítem del dropdown */
+  }
+
+  /* Estilos para enlaces dentro del dropdown */
+  .navmenu .dropdown ul a {
+    padding: 10px 20px; /* Padding interno de 10px vertical y 20px horizontal */
+    font-size: 15px; /* Tamaño de fuente de 15px */
+    text-transform: none; /* Sin transformación, se muestra tal cual está escrito */
+    font-weight: 400; /* Peso de fuente normal */
+    color: var(--nav-dropdown-color); /* Color del enlace definido en la variable de dropdown */
+  }
+
+  /* Estilos para íconos dentro de los enlaces del dropdown */
+  .navmenu .dropdown ul a i {
+    font-size: 12px; /* Tamaño de fuente de los íconos de 12px */
+  }
+
+  /* Al hacer hover sobre enlaces dentro del dropdown se cambia su color */
+  .navmenu .dropdown ul a:hover,
+  .navmenu .dropdown ul .active:hover,
+  .navmenu .dropdown ul li:hover>a {
+    color: var(--nav-dropdown-hover-color); /* Aplica el color de hover del dropdown */
+  }
+
+  /* Muestra el dropdown al hacer hover sobre el elemento padre */
+  .navmenu .dropdown:hover>ul {
+    opacity: 1; /* Aplica opacidad completa */
+    top: 100%; /* Mueve el dropdown para que se alinee con el final del enlace padre */
+    visibility: visible; /* Lo hace visible */
+  }
+
+  /* Estilos para dropdown anidados (sub-dropdowns) */
+  .navmenu .dropdown .dropdown ul {
+    top: 0; /* Ubica el sub-dropdown al inicio */
+    left: -90%; /* Posicionado a la izquierda del dropdown principal */
+    visibility: hidden; /* Oculto por defecto */
+  }
+
+  /* Muestra el sub-dropdown al hacer hover sobre su elemento padre */
+  .navmenu .dropdown .dropdown:hover>ul {
+    opacity: 1; /* Aplica opacidad completa */
+    top: 0; /* Mantiene la posición en la parte superior */
+    left: -100%; /* Ajusta la posición para mostrarse de forma adecuada */
+    visibility: visible; /* Lo hace visible */
+  }
+}
+
+/* Mobile Navigation: Estilos para el menú en dispositivos con ancho menor a 1199px */
+@media (max-width: 1199px) {
+  /* Ícono para activar la navegación móvil */
+  .mobile-nav-toggle {
+    color: var(--nav-color); /* Aplica el color de navegación */
+    font-size: 28px; /* Tamaño del ícono de 28px */
+    line-height: 0; /* Sin interlineado */
+    margin-right: 10px; /* Margen a la derecha de 10px */
+    cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+    transition: color 0.3s; /* Transición suave en el cambio de color */
+  }
+
+  /* Ajusta el contenedor .navmenu para móvil */
+  .navmenu {
+    padding: 0; /* Sin padding */
+    z-index: 9997; /* Prioridad alta para mostrarse encima de otros elementos */
+  }
+
+  /* Estilos para la lista de navegación en móvil */
+  .navmenu ul {
+    display: none; /* Se oculta la lista por defecto en dispositivos móviles */
+    list-style: none; /* Sin viñetas */
+    position: absolute; /* Posicionamiento absoluto para sobreponer sobre la página */
+    inset: 60px 20px 20px 20px; /* Define la posición con 60px de la parte superior y 20px en los laterales e inferior */
+    padding: 10px 0; /* Padding vertical de 10px */
+    margin: 0; /* Sin márgenes */
+    border-radius: 6px; /* Bordes redondeados de 6px */
+    background-color: var(--nav-mobile-background-color); /* Fondo para el menú móvil definido en la variable */
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); 
+        /* Borde del menú móvil usando color-mix para un efecto sutil */
+    box-shadow: none; /* Sin sombra en este caso */
+    overflow-y: auto; /* Permite desplazamiento vertical si el contenido excede el área */
+    transition: 0.3s; /* Transición para la aparición o desaparición del menú */
+    z-index: 9998; /* Prioridad por encima de .navmenu pero debajo del toggle */
+  }
+
+  /* Estilos para enlaces en el menú móvil */
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-dropdown-color); /* Aplica el color de los enlaces dentro del dropdown */
+    padding: 10px 20px; /* Padding interno para mayor área táctil */
+    font-family: var(--nav-font); /* Fuente para navegación */
+    font-size: 17px; /* Tamaño de fuente de 17px, mayor para móviles */
+    font-weight: 500; /* Peso medio */
+    display: flex; /* Usa Flexbox para alinear el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: space-between; /* Separa el contenido (texto e ícono) */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    transition: 0.3s; /* Transición suave en cambios */
+  }
+
+  /* Estilos para íconos dentro de los enlaces en el menú móvil */
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px; /* Tamaño de fuente para íconos */
+    line-height: 0; /* Sin interlineado */
+    margin-left: 5px; /* Margen izquierdo para separar del texto */
+    width: 30px; /* Ancho fijo de 30px */
+    height: 30px; /* Alto fijo de 30px */
+    display: flex; /* Muestra el ícono como flex */
+    align-items: center; /* Centra verticalmente el contenido del ícono */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    border-radius: 50%; /* Ícono circular */
+    transition: 0.3s; /* Transición para cambios en hover o foco */
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%); 
+        /* Fondo sutil mezclado usando el color de acento */
+  }
+
+  /* Hover o foco sobre el ícono en el menú móvil cambia su fondo y color */
+  .navmenu a i:hover,
+  .navmenu a:focus i:hover {
+    background-color: var(--accent-color); /* Fondo cambia a color de acento */
+    color: var(--contrast-color); /* Color del ícono cambia a uno de alto contraste */
+  }
+
+  /* Hover o estado activo en enlaces del menú móvil */
+  .navmenu a:hover,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-dropdown-hover-color); /* Aplica el color de hover de los enlaces en el menú móvil */
+  }
+
+  /* Estilos para el ícono dentro de un enlace activo en el menú móvil */
+  .navmenu .active i,
+  .navmenu .active:focus i {
+    background-color: var(--accent-color); /* Fondo del ícono cambia a color de acento */
+    color: var(--contrast-color); /* Color del ícono cambia a contraste */
+    transform: rotate(180deg); /* Rota el ícono 180 grados para indicar estado activo */
+  }
+
+  /* Estilos para el submenú dentro del menú móvil */
+  .navmenu .dropdown ul {
+    position: static; /* Se posiciona de forma estática para adaptarse al flujo del documento */
+    display: none; /* Se oculta por defecto */
+    z-index: 99; /* Nivel de apilamiento para asegurar que se muestra sobre otros elementos */
+    padding: 10px 0; /* Padding vertical */
+    margin: 10px 20px; /* Margen de 10px vertical y 20px horizontal */
+    background-color: var(--nav-dropdown-background-color); 
+        /* Fondo para dropdown en móvil */
+    transition: all 0.5s ease-in-out; /* Transición suave en la apertura/cierre */
+  }
+
+  /* Si existe un sub-dropdown dentro del dropdown, se le aplica un fondo semitransparente */
+  .navmenu .dropdown ul ul {
+    background-color: rgba(33, 37, 41, 0.1);
+  }
+
+  /* Clase para activar la visualización de un dropdown en móvil */
+  .navmenu .dropdown > .dropdown-active {
+    display: block; /* Muestra el submenú activo */
+    background-color: rgba(33, 37, 41, 0.03); /* Fondo muy leve para diferenciar el estado activo */
+  }
+
+  /* Cuando el menú móvil está activo, se deshabilita el scroll del body */
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+
+  /* Estilos para el ícono de navegación móvil cuando el menú está activo */
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #fff; /* Ícono en blanco */
+    position: absolute; /* Posicionado de forma absoluta */
+    font-size: 32px; /* Tamaño del ícono mayor */
+    top: 15px; /* Desde el top a 15px */
+    right: 15px; /* Desde la derecha a 15px */
+    margin-right: 0; /* Sin margen derecho */
+    z-index: 9999; /* Muy alto para asegurarse que está sobre todo */
+  }
+
+  /* Cuando el menú móvil está activo, se fija el menú en toda la pantalla */
+  .mobile-nav-active .navmenu {
+    position: fixed; /* Posición fija para cubrir toda la pantalla */
+    overflow: hidden; /* Evita scroll interno */
+    inset: 0; /* Ubica el menú en todos los bordes (top, right, bottom, left) a 0 */
+    background: rgba(33, 37, 41, 0.8); /* Fondo semi-transparente oscuro */
+    transition: 0.3s; /* Transición para cambios de estado */
+  }
+
+  /* Muestra la lista de navegación cuando el menú móvil está activo */
+  .mobile-nav-active .navmenu > ul {
+    display: block;
+  }
+}
+
+/*--------------------------------------------------------------*/
+/* Global Footer                                               */
+/*--------------------------------------------------------------*/
+
+/* Estilos para el pie de página global (.footer) */
+.footer {
+  color: var(--default-color); /* Color de texto en el footer usando la variable global */
+  background-color: var(--background-color); /* Color de fondo del footer usando la variable global */
+  background: url("../img/backgrounds/footer-bg.jpg") top center no-repeat; 
+      /* Imagen de fondo posicionada arriba y centrada, sin repetir */
+  background-size: cover; /* La imagen de fondo se ajusta para cubrir todo el footer */
+  font-size: 14px; /* Tamaño de fuente para el contenido del footer */
+  position: relative; /* Posicionamiento relativo para ubicar pseudo-elementos */
+}
+
+/* El contenedor interno del footer también se posiciona de forma relativa */
+.footer .container {
+  position: relative;
+}
+
+/* Pseudo-elemento :before en el footer para aplicar una capa superpuesta */
+.footer:before {
+  content: ""; /* Contenido vacío para decoración */
+  background: color-mix(in srgb, var(--background-color), transparent 20%); 
+      /* Mezcla el color de fondo con transparencia para crear efecto de superposición */
+  position: absolute; /* Posición absoluta que cubre todo el footer */
+  inset: 0; /* Ocupa todo el espacio (top, right, bottom, left a 0) */
+}
+
+/* Sección superior del footer */
+.footer .footer-top {
+  padding-top: 50px; /* Padding superior de 50px */
+}
+
+/* Estilos para la sección "about" dentro del footer */
+.footer .footer-about .logo {
+  line-height: 1; /* Altura de línea 1 para el logo */
+  margin-bottom: 25px; /* Margen inferior de 25px */
+}
+
+/* Imagen dentro del logo en el footer */
+.footer .footer-about .logo img {
+  max-height: 40px; /* Altura máxima de 40px */
+  margin-right: 6px; /* Margen a la derecha de 6px */
+}
+/* Texto del logo en el footer */
+.footer .footer-about .logo span {
+  color: var(--heading-color); /* Color del encabezado */
+  font-family: var(--heading-font); /* Fuente específica para encabezados */
+  font-size: 26px; /* Tamaño de fuente de 26px */
+  font-weight: 700; /* Fuente en negrita */
+  letter-spacing: 1px; /* Espaciado de 1px entre letras */
+}
+
+/* Párrafo en la sección "about" del footer */
+.footer .footer-about p {
+  font-size: 14px; /* Tamaño de fuente de 14px */
+  font-family: var(--heading-font); /* Usa la fuente para encabezados */
+}
+
+/* Estilos para los enlaces de redes sociales en el footer */
+.footer .social-links a {
+  display: flex; /* Usa Flexbox para centrar el contenido */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  width: 40px; /* Ancho fijo de 40px */
+  height: 40px; /* Alto fijo de 40px */
+  border-radius: 5px; /* Bordes redondeados de 5px */
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%); 
+      /* Borde sutil usando color-mix */
+  font-size: 16px; /* Tamaño de fuente de 16px */
+  color: color-mix(in srgb, var(--default-color), transparent 20%); 
+      /* Color del enlace con transparencia */
+  margin-right: 10px; /* Margen a la derecha de 10px */
+  transition: 0.3s; /* Transición suave */
+}
+
+/* Hover sobre enlaces de redes sociales en el footer cambia color y borde */
+.footer .social-links a:hover {
+  color: var(--accent-color); /* Cambia a color de acento */
+  border-color: var(--accent-color); /* El borde también cambia a acento */
+}
+
+/* Estilos para encabezados h4 en el footer */
+.footer h4 {
+  font-size: 20px; /* Tamaño de fuente de 20px */
+  font-weight: bold; /* Fuente en negrita */
+  position: relative; /* Posicionamiento relativo */
+  padding-bottom: 12px; /* Padding inferior de 12px */
+}
+
+/* Párrafos en la sección de contacto del footer */
+.footer .footer-contact p {
+  margin-bottom: 5px; /* Margen inferior de 5px */
+}
+
+/* Sección de copyright en el footer */
+.footer .copyright {
+  padding-top: 25px; /* Padding superior de 25px */
+  padding-bottom: 25px; /* Padding inferior de 25px */
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+      /* Borde superior sutil usando color-mix */
+}
+
+/* Párrafo de copyright sin margen inferior */
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
+/* Créditos en el footer con un tamaño de fuente más pequeño */
+.footer .credits {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+/*--------------------------------------------------------------*/
+/* Preloader                                                  */
+/*--------------------------------------------------------------*/
+
+/* Estilos para el preloader, que aparece mientras carga la página */
+#preloader {
+  position: fixed; /* Se posiciona de forma fija respecto al viewport */
+  inset: 0; /* Ocupa toda la pantalla (top, right, bottom, left: 0) */
+  z-index: 999999; /* Muy alto para garantizar que se muestre encima de todo */
+  overflow: hidden; /* Oculta cualquier contenido desbordado */
+  background: var(--background-color); /* Usa el color de fondo global */
+  transition: all 0.6s ease-out; /* Transición suave para desaparecer al terminar la carga */
+}
+
+/* Pseudo-elemento del preloader que muestra el indicador animado */
+#preloader:before {
+  content: ""; /* Contenido vacío, solo visual */
+  position: fixed; /* Posicionado de forma fija */
+  top: calc(50% - 30px); /* Centrado verticalmente restando la mitad del alto del indicador (60px/2) */
+  left: calc(50% - 30px); /* Centrado horizontalmente */
+  border: 6px solid #ffffff; /* Borde base de 6px blanco */
+  border-color: var(--accent-color) transparent var(--accent-color) transparent; 
+      /* Borde superior e inferior en color de acento, laterales transparentes para el efecto de giro */
+  border-radius: 50%; /* Forma circular */
+  width: 60px; /* Ancho del indicador */
+  height: 60px; /* Alto del indicador */
+  animation: animate-preloader 1.5s linear infinite; /* Animación de giro indefinido cada 1.5 segundos */
+}
+
+/* Definición de la animación para el preloader */
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg); /* Comienza sin rotación */
+  }
+  100% {
+    transform: rotate(360deg); /* Gira 360 grados continuamente */
+  }
+}
+
+/*--------------------------------------------------------------*/
+/* Scroll Top Button                                          */
+/*--------------------------------------------------------------*/
+
+/* Estilos para el botón que permite volver al tope de la página */
+.scroll-top {
+  position: fixed; /* Se posiciona de forma fija */
+  visibility: hidden; /* Oculto por defecto */
+  opacity: 0; /* Completamente transparente por defecto */
+  right: 15px; /* Ubicado a 15px del borde derecho */
+  bottom: 15px; /* Ubicado a 15px del borde inferior */
+  z-index: 99999; /* Nivel de apilamiento alto para asegurarse que se muestre encima */
+  background-color: var(--accent-color); /* Fondo usando el color de acento */
+  width: 40px; /* Ancho de 40px */
+  height: 40px; /* Alto de 40px */
+  border-radius: 4px; /* Bordes redondeados de 4px */
+  transition: all 0.4s; /* Transición suave para cambios de estado */
+}
+
+/* Estilos para el ícono dentro del botón de scroll */
+.scroll-top i {
+  font-size: 24px; /* Tamaño de fuente de 24px para el ícono */
+  color: var(--default-color); /* Color del ícono usando el color por defecto */
+  line-height: 0; /* Sin interlineado para centrar el ícono */
+}
+
+/* Hover sobre el botón de scroll para cambiar fondo y color */
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+      /* Mezcla el color de acento con transparencia para efecto hover */
+  color: var(--contrast-color); /* Cambia el color del ícono a uno de alto contraste */
+}
+
+/* Estado activo del botón (cuando debe mostrarse) */
+.scroll-top.active {
+  visibility: visible; /* Se hace visible */
+  opacity: 1; /* Completamente opaco */
+}
+
+/*--------------------------------------------------------------*/
+/* Disable aos animation delay on mobile devices              */
+/*--------------------------------------------------------------*/
+
+/* Para dispositivos con ancho máximo de 768px, se elimina el delay de animación de AOS */
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important; /* Fuerza a que no haya retraso en la transición */
+  }
+}
+
+/*--------------------------------------------------------------*/
+/* Global Page Titles & Breadcrumbs                           */
+/*--------------------------------------------------------------*/
+
+/* Estilos para el contenedor de títulos de página */
+.page-title {
+  color: var(--default-color); /* Color de texto usando la variable global */
+  background-color: var(--background-color); /* Fondo usando la variable global */
+  background-size: cover; /* La imagen de fondo cubrirá todo el contenedor */
+  background-position: center; /* La imagen se posiciona centrada */
+  background-repeat: no-repeat; /* La imagen no se repite */
+  padding: 160px 0 60px 0; /* Padding superior de 160px, inferior de 60px, sin padding lateral */
+  text-align: center; /* Centra el texto */
+  position: relative; /* Posicionamiento relativo para pseudo-elementos */
+}
+
+/* Pseudo-elemento sobre el título para crear una superposición semitransparente */
+.page-title:before {
+  content: ""; /* Contenido vacío para decoración */
+  background-color: color-mix(in srgb, var(--background-color), transparent 40%);
+      /* Mezcla el fondo con un 40% de transparencia */
+  position: absolute; /* Posiciona el pseudo-elemento de forma absoluta */
+  inset: 0; /* Ocupa todo el contenedor (.page-title) */
+}
+
+/* Estilos para el título h1 dentro de .page-title */
+.page-title h1 {
+  font-size: 56px; /* Tamaño de fuente muy grande para el título */
+  font-weight: 500; /* Peso de fuente medio */
+  margin-bottom: 10px; /* Margen inferior de 10px */
+}
+
+/* Estilos para la lista de breadcrumbs (migas de pan) */
+.page-title .breadcrumbs ol {
+  display: flex; /* Usa Flexbox para alinear los items horizontalmente */
+  flex-wrap: wrap; /* Permite que los items se envuelvan a la siguiente línea si es necesario */
+  list-style: none; /* Sin viñetas o números por defecto */
+  justify-content: center; /* Centra los items horizontalmente */
+  padding: 0; /* Sin padding */
+  margin: 0; /* Sin margen */
+  font-size: 16px; /* Tamaño de fuente para los breadcrumbs */
+  font-weight: 500; /* Peso de fuente medio */
+}
+
+/* Cada ítem adicional en la lista de breadcrumbs tiene padding a la izquierda */
+.page-title .breadcrumbs ol li+li {
+  padding-left: 10px; /* Añade 10px de espacio a la izquierda de cada ítem, excepto el primero */
+}
+
+/* Pseudo-elemento que coloca una barra ("/") entre los ítems de breadcrumbs */
+.page-title .breadcrumbs ol li+li::before {
+  content: "/"; /* El contenido es la barra diagonal */
+  display: inline-block; /* Se muestra en línea como bloque */
+  padding-right: 10px; /* Espacio a la derecha de la barra */
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+      /* Color de la barra, mezclado para ser sutil */
+}
+
+/*--------------------------------------------------------------*/
+/* Global Sections                                             */
+/*--------------------------------------------------------------*/
+
+/* Estilos para secciones globales: afecta a <section> o elementos con la clase .section */
+section,
+.section {
+  color: var(--default-color); /* Aplica el color de texto predeterminado */
+  background-color: var(--background-color); /* Aplica el color de fondo global */
+  padding: 60px 0; /* Padding vertical de 60px */
+  scroll-margin-top: 92px; /* Margen superior para el scroll (útil en navegación anclada) */
+  overflow: clip; /* Oculta cualquier contenido que se desborde del contenedor */
+}
+
+/* Ajuste para dispositivos con ancho máximo de 1199px */
+@media (max-width: 1199px) {
+  section,
+  .section {
+    scroll-margin-top: 76px; /* Disminuye el margen superior de scroll para pantallas más pequeñas */
+  }
+}
+
+/*--------------------------------------------------------------*/
+/* Global Section Titles                                       */
+/*--------------------------------------------------------------*/
+
+/* Estilos para los títulos de sección */
+.section-title {
+  text-align: center; /* Centra el texto del título de la sección */
+  padding-bottom: 60px; /* Padding inferior de 60px para separar el título del contenido */
+  position: relative; /* Posicionamiento relativo para pseudo-elementos decorativos */
+}
+
+/* Título h2 dentro de .section-title */
+.section-title h2 {
+  font-size: 32px; /* Tamaño de fuente de 32px */
+  font-weight: 700; /* Fuente en negrita */
+  position: relative; /* Permite posicionamiento de pseudo-elementos */
+}
+
+/* Pseudo-elementos before y after en h2 para crear líneas decorativas */
+.section-title h2:before,
+.section-title h2:after {
+  content: ""; /* Contenido vacío para el efecto decorativo */
+  width: 50px; /* Ancho de las líneas de 50px */
+  height: 2px; /* Altura de 2px para las líneas */
+  background: var(--accent-color); /* Fondo de las líneas con el color de acento */
+  display: inline-block; /* Se muestran en línea */
+}
+
+/* Ajusta el margin del pseudo-elemento before */
+.section-title h2:before {
+  margin: 0 15px 10px 0; /* Margen: 0 arriba, 15px a la derecha, 10px abajo, 0 izquierda */
+}
+
+/* Ajusta el margin del pseudo-elemento after */
+.section-title h2:after {
+  margin: 0 0 10px 15px; /* Margen: 0 arriba, 0 derecha, 10px abajo, 15px izquierda */
+}
+
+/* Párrafos dentro de .section-title no tienen margen inferior */
+.section-title p {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------*/
+/* Hero Section                                               */
+/*--------------------------------------------------------------*/
+
+/* Estilos para la sección hero, que es la primera sección visual y de bienvenida */
+.hero {
+  width: 100%; /* Ocupa el ancho completo */
+  min-height: 100vh; /* Altura mínima de la ventana (100vh) */
+  position: relative; /* Permite posicionamiento absoluto para elementos internos */
+  padding-top: 100px; /* Padding superior de 100px para dejar espacio */
+  display: block; /* Se muestra como bloque */
+  justify-content: center; /* Centra horizontalmente (aunque en block se ignora, se utiliza en flex) */
+  align-items: center; /* Centra verticalmente (aunque en block se ignora, se utiliza en flex) */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
+  text-align: center; /* Centra el texto en la sección hero */
+}
+
+/* Estilos para el contenedor de información dentro de la sección hero (.info) */
+.hero .info {
+  position: relative; /* Posicionamiento relativo para ubicar correctamente su contenido */
+  inset: 0; /* Hace que ocupe todo el espacio del contenedor padre */
+  z-index: 3; /* Se sitúa por encima de otros elementos, como imágenes de fondo */
+  padding: 140px 0 60px 0; /* Padding superior de 140px, inferior de 60px, sin padding lateral */
+}
+
+/* Ajuste de padding para .hero .info en dispositivos pequeños o con poca altura */
+@media (max-width: 768px),
+(max-height: 480px) {
+  .hero .info {
+    padding: 100px 50px 60px 50px; /* Ajusta el padding para mejorar la visualización en pantallas pequeñas */
+  }
+}
+
+/* Estilos para el título (h2) dentro de la sección hero */
+.hero .info h2 {
+  margin-bottom: 30px; /* Margen inferior de 30px para separar del siguiente contenido */
+  color: var(--accent-color); /* Aplica el color de acento al texto */
+  padding-bottom: 30px; /* Padding inferior de 30px para dar espacio al pseudo-elemento decorativo */
+  font-size: 56px; /* Tamaño de fuente grande de 56px */
+  font-weight: 700; /* Fuente en negrita */
+  position: relative; /* Posicionamiento relativo para el pseudo-elemento */
+}
+
+/* Pseudo-elemento que añade una línea decorativa debajo del título en la sección hero */
+.hero .info h2:after {
+  content: ""; /* Contenido vacío para decoración */
+  position: absolute; /* Posicionamiento absoluto respecto a h2 */
+  display: block; /* Se muestra como bloque para poder definir ancho y alto */
+  width: 80px; /* Ancho de 80px para la línea */
+  height: 4px; /* Altura de 4px para la línea */
+  background: var(--accent-color); /* Color de la línea en acento */
+  left: 0; /* Alineado a la izquierda */
+  right: 0; /* También a la derecha para centrar */
+  bottom: 0; /* Alineado en la parte inferior de h2 */
+  margin: auto; /* Centra el pseudo-elemento horizontalmente */
+}
+
+/* Ajuste del tamaño del h2 en dispositivos con ancho máximo de 768px */
+@media (max-width: 768px) {
+  .hero .info h2 {
+    font-size: 36px; /* Reduce el tamaño del título a 36px */
+  }
+}
+
+/* Estilos para los párrafos (<p>) dentro de .hero .info */
+.hero .info p {
+  color: color-mix(in srgb, var(--default-color), transparent 20%); 
+      /* Mezcla el color por defecto con algo de transparencia para un efecto más suave */
+  font-size: 18px; /* Tamaño de fuente de 18px */
+}
+
+/* Estilos para el botón de "Get Started" dentro de la sección hero */
+.hero .info .btn-get-started {
+  color: var(--contrast-color); /* Texto en color contrastante (de alto contraste) */
+  font-family: var(--heading-font); /* Usa la fuente de encabezado para el botón */
+  font-weight: 500; /* Peso de fuente medio */
+  font-size: 16px; /* Tamaño de fuente de 16px */
+  letter-spacing: 1px; /* Espaciado entre letras de 1px */
+  display: inline-block; /* Se muestra en línea, pero permite definir ancho y alto */
+  padding: 12px 40px; /* Padding: 12px vertical y 40px horizontal */
+  border-radius: 50px; /* Bordes redondeados para darle forma de botón */
+  transition: 0.5s; /* Transición suave de 0.5s para cambios en hover */
+  margin: 10px; /* Margen de 10px alrededor del botón */
+  border: 4px solid var(--accent-color); /* Borde de 4px con el color de acento */
+}
+
+/* Hover sobre el botón de "Get Started": cambia el fondo al color de acento */
+.hero .info .btn-get-started:hover {
+  background: var(--accent-color);
+}
+
+/*--------------------------------------------------------------*/
+/* Estilos para el carrusel dentro de la sección hero           */
+/*--------------------------------------------------------------*/
+
+/* Contenedor del carrusel (.carousel) */
+.hero .carousel {
+  inset: 0; /* Hace que el carrusel ocupe toda el área del contenedor padre */
+  position: absolute; /* Posicionamiento absoluto para estar detrás del contenido */
+  overflow: hidden; /* Oculta cualquier parte de las imágenes que se salgan del contenedor */
+}
+
+/* Cada elemento del carrusel (.carousel-item) */
+.hero .carousel-item {
+  position: absolute; /* Posicionamiento absoluto para superponerlos uno encima del otro */
+  inset: 0; /* Ocupa todo el contenedor del carrusel */
+  background-size: cover; /* La imagen de fondo se ajusta para cubrir el elemento */
+  background-position: center; /* Centra la imagen de fondo */
+  background-repeat: no-repeat; /* La imagen de fondo no se repite */
+  overflow: hidden; /* Oculta contenido que se desborda */
+  transition-duration: 0.4s; /* Duración de 0.4 segundos para la transición entre elementos */
+}
+
+/* Estilos para las imágenes dentro de cada elemento del carrusel */
+.hero .carousel-item img {
+  position: absolute; /* Posicionamiento absoluto para ajustar la imagen dentro del contenedor */
+  inset: 0; /* Ocupa todo el espacio del contenedor */
+  display: block; /* Se muestra como bloque */
+  width: 100%; /* Ancho del 100% del contenedor */
+  height: 100%; /* Alto del 100% del contenedor */
+  object-fit: cover; /* La imagen se recorta para cubrir el contenedor sin perder proporción */
+  z-index: 1; /* Se sitúa detrás de otros pseudo-elementos (por ejemplo, la superposición) */
+}
+
+/* Pseudo-elemento en cada .carousel-item que añade una capa semitransparente */
+.hero .carousel-item::before {
+  content: ""; /* Contenido vacío para decoración */
+  background-color: color-mix(in srgb, var(--background-color), transparent 30%);
+      /* Mezcla el color de fondo global con 30% de transparencia */
+  position: absolute; /* Posicionamiento absoluto */
+  inset: 0; /* Ocupa todo el contenedor */
+  z-index: 2; /* Se sitúa por encima de la imagen, pero debajo de otros contenidos (como controles) */
+}
+
+/* Estilos para el control previo del carrusel */
+.hero .carousel-control-prev {
+  justify-content: start; /* Alinea el contenido del control a la izquierda */
+}
+
+/* Ajuste del padding para el control previo en pantallas a partir de 640px */
+@media (min-width: 640px) {
+  .hero .carousel-control-prev {
+    padding-left: 15px; /* Añade 15px de padding a la izquierda */
+  }
+}
+
+/* Estilos para el control siguiente del carrusel */
+.hero .carousel-control-next {
+  justify-content: end; /* Alinea el contenido del control a la derecha */
+}
+
+/* Ajuste del padding para el control siguiente en pantallas a partir de 640px */
+@media (min-width: 640px) {
+  .hero .carousel-control-next {
+    padding-right: 15px; /* Añade 15px de padding a la derecha */
+  }
+}
+
+/* Estilos para los íconos de control (siguiente y anterior) en el carrusel */
+.hero .carousel-control-next-icon,
+.hero .carousel-control-prev-icon {
+  background: none; /* Sin fondo definido */
+  font-size: 26px; /* Tamaño de fuente de 26px para los íconos */
+  line-height: 0; /* Sin interlineado */
+  background: color-mix(in srgb, var(--default-color), transparent 80%);
+      /* Mezcla el color por defecto con 80% de transparencia para el fondo del ícono */
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+      /* Color del ícono, mezclado con 40% de transparencia */
+  border-radius: 50px; /* Bordes redondeados para dar forma circular al ícono */
+  width: 54px; /* Ancho fijo de 54px */
+  height: 54px; /* Alto fijo de 54px */
+  display: flex; /* Uso de Flexbox para centrar el contenido */
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+}
+
+/* Asegura que los controles del carrusel se sitúen por encima del contenido (con z-index) */
+.hero .carousel-control-prev,
+.hero .carousel-control-next {
+  z-index: 3; /* Nivel de apilamiento 3 */
+  transition: 0.3s; /* Transición suave de 0.3s para cambios en foco o hover */
+}
+
+/* Cuando se enfoca un control del carrusel, su opacidad se reduce */
+.hero .carousel-control-prev:focus,
+.hero .carousel-control-next:focus {
+  opacity: 0.5;
+}
+
+/* Al pasar el cursor sobre los controles del carrusel, su opacidad aumenta */
+.hero .carousel-control-prev:hover,
+.hero .carousel-control-next:hover {
+  opacity: 0.9;
+}
+
+
+/*--------------------------------------------------------------*/
+/* indexcards Section                                      */
+/*--------------------------------------------------------------*/
+
+/* Estilos para cada tarjeta de producto en la sección de construcciones */
+.indexcards .card-item {
+  background-color: var(--surface-color); /* Fondo de la tarjeta usando la variable de superficie */
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+      /* Borde sutil con color mezclado a partir del color predeterminado y 85% de transparencia */
+  position: relative; /* Posicionamiento relativo para permitir elementos internos posicionados absolutamente */
+  border-radius: 0; /* Sin bordes redondeados */
+}
+
+/* Contenedor para la imagen de la tarjeta de producto */
+.indexcards .card-item .card-bg {
+  min-height: 300px; /* Altura mínima de 300px para asegurar visualización adecuada */
+  position: relative; /* Posición relativa para ubicar la imagen correctamente */
+}
+
+/* Estilos para la imagen dentro de .card-bg */
+.indexcards .card-item .card-bg img {
+  position: absolute; /* Posiciona la imagen de forma absoluta para ocupar todo el contenedor */
+  inset: 0; /* Ubica la imagen en todos los bordes (top, right, bottom, left: 0) */
+  display: block; /* Se muestra como bloque */
+  width: 100%; /* Ancho del 100% del contenedor */
+  height: 100%; /* Alto del 100% del contenedor */
+  object-fit: cover; /* Hace que la imagen cubra el contenedor, recortándose si es necesario */
+  object-position: center; /* Centra la imagen en el contenedor */
+  z-index: 1; /* Se sitúa detrás de otros elementos, como el cuerpo de la tarjeta */
+}
+
+/* Contenedor para el contenido textual dentro de la tarjeta (por ejemplo, título y descripción) */
+.indexcards .card-item .card-body {
+  padding: 30px; /* Padding interno de 30px para separar el contenido de los bordes */
+}
+
+/* Estilos para el título (h4) en la tarjeta de producto */
+.indexcards .card-item h4 {
+  font-weight: 700; /* Fuente en negrita */
+  font-size: 20px; /* Tamaño de fuente de 20px */
+  margin-bottom: 15px; /* Margen inferior de 15px para separar del párrafo siguiente */
+}
+
+/* Estilos para el párrafo descriptivo dentro de la tarjeta de producto */
+.indexcards .card-item p {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+      /* Mezcla del color predeterminado con un 40% de transparencia para un tono más suave */
+  margin: 0; /* Sin margen para mantener la coherencia del espaciado */
+}
+
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+
+/* Selecciona cualquier elemento con la clase "service-item" dentro de un contenedor con la clase "services" */
+.services .service-item {
+  background-color: var(--surface-color); /* Establece el color de fondo usando la variable global --surface-color */
+  padding: 40px; /* Aplica 40px de padding en todos los lados */
+  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1); /* Agrega una sombra de 30px de desenfoque con opacidad 0.1 */
+  height: 100%; /* Ajusta la altura al 100% del contenedor padre */
+}
+
+/* Selecciona cualquier elemento con la clase "icon" dentro de .service-item */
+.services .service-item .icon {
+  width: 48px; /* Ancho fijo de 48px para el contenedor del ícono */
+  height: 48px; /* Alto fijo de 48px para el contenedor del ícono */
+  position: relative; /* Posiciona el contenedor de forma relativa para posicionar pseudo-elementos hijos */
+  margin-bottom: 50px; /* Aplica un margen inferior de 50px */
+}
+
+/* Selecciona cualquier elemento <i> dentro de .icon en .service-item */
+.services .service-item .icon i {
+  color: var(--heading-color); /* Define el color del ícono usando la variable --heading-color */
+  font-size: 56px; /* Establece el tamaño de fuente (ícono) en 56px */
+  transition: ease-in-out 0.3s; /* Aplica una transición de 0.3s con timing ease-in-out para cambios de estado */
+  z-index: 2; /* Posiciona el ícono encima de elementos con menor z-index */
+  position: relative; /* Permite posicionar correctamente el ícono dentro de su contenedor */
+}
+
+/* Pseudo-elemento ::before para .icon, utilizado para efectos decorativos */
+.services .service-item .icon:before {
+  position: absolute; /* Posiciona el pseudo-elemento de forma absoluta respecto a .icon */
+  content: ""; /* Define el contenido vacío para poder visualizar el pseudo-elemento */
+  height: 100%; /* Hace que la altura del pseudo-elemento sea igual a la del contenedor */
+  width: 100%; /* Hace que el ancho sea igual al ancho del contenedor */
+  background: color-mix(in srgb, var(--heading-color), transparent 95%); 
+      /* Combina el color de encabezado con un 95% de transparencia para crear un efecto sutil */
+  border-radius: 50px; /* Aplica bordes redondeados de 50px */
+  z-index: 1; /* Posiciona el pseudo-elemento detrás del ícono (z-index menor) */
+  top: 10px; /* Ubica el pseudo-elemento 10px desde el borde superior */
+  right: -20px; /* Ubica el pseudo-elemento 20px a la izquierda de su borde derecho */
+  transition: 0.3s; /* Aplica una transición de 0.3s para cambios en este pseudo-elemento */
+}
+
+/* Selecciona el encabezado <h3> dentro de .service-item */
+.services .service-item h3 {
+  color: color-mix(in srgb, var(--heading-color), transparent 20%); 
+      /* Aplica un color mezclado con 20% de transparencia basado en --heading-color */
+  font-weight: 700; /* Define el peso de fuente en negrita (700) */
+  margin: 0 0 20px 0; /* Aplica 0px de margen en top, 0px en derecha, 20px en inferior y 0px en izquierda */
+  padding-bottom: 8px; /* Añade 8px de padding en la parte inferior para separar visualmente */
+  font-size: 22px; /* Establece el tamaño de fuente en 22px */
+  position: relative; /* Permite posicionar pseudo-elementos relativos al h3 */
+  display: inline-block; /* Muestra el h3 como un bloque en línea, permitiendo definir ancho y altura */
+  border-bottom: 4px solid color-mix(in srgb, var(--heading-color), transparent 90%);
+      /* Añade una línea inferior de 4px con un color mezclado (90% transparente) */
+  transition: 0.3s; /* Aplica una transición suave de 0.3s para cambios en el estado hover */
+}
+
+/* Selecciona los párrafos (<p>) dentro de .service-item */
+.services .service-item p {
+  line-height: 24px; /* Establece una altura de línea de 24px para mejorar la legibilidad */
+  font-size: 14px; /* Tamaño de fuente de 14px */
+  margin-bottom: 0; /* Elimina margen inferior para un espaciado uniforme */
+}
+
+/* Selecciona el enlace con la clase .readmore en .service-item */
+.services .service-item .readmore {
+  margin-top: 15px; /* Aplica un margen superior de 15px para separar del contenido anterior */
+  display: inline-block; /* Muestra el enlace como un bloque en línea para permitir estilos personalizados */
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+      /* Define el color del enlace mezclando el color predeterminado con 30% de transparencia */
+}
+
+/* Estado hover en .service-item: cambia el color del ícono */
+.services .service-item:hover .icon i {
+  color: var(--heading-color); /* Al hacer hover, el ícono cambia a --heading-color */
+}
+
+/* Estado hover en .service-item: cambia el fondo del pseudo-elemento del ícono */
+.services .service-item:hover .icon:before {
+  background: var(--accent-color); /* Cambia el fondo a --accent-color al hacer hover sobre el ícono */
+}
+
+/* Estado hover en .service-item: cambia el estilo del h3 */
+.services .service-item:hover h3 {
+  border-color: var(--accent-color); /* Cambia el color del borde inferior a --accent-color */
+  color: var(--heading-color); /* Asegura que el color del h3 se mantenga en --heading-color */
+}
+
+/* Estado hover en .service-item: cambia el color del enlace .readmore */
+.services .service-item:hover .readmore {
+  color: var(--accent-color); /* Cambia el color del enlace a --accent-color al hacer hover */
+}
+
+/*--------------------------------------------------------------
+# Products Section
+--------------------------------------------------------------*/
+
+/* Selecciona el contenedor de filtros del portafolio en la sección de proyectos */
+.products .portfolio-filters {
+  padding: 0; /* Sin padding en el contenedor */
+  margin: 0 auto 20px auto; /* Margen superior e inferior: 0 y 20px, respectivamente; los laterales se centran automáticamente */
+  list-style: none; /* Remueve viñetas de la lista */
+  text-align: center; /* Centra el contenido de la lista */
+}
+
+/* Selecciona cada elemento de la lista de filtros */
+.products .portfolio-filters li {
+  cursor: pointer; /* Muestra un cursor pointer para indicar que es clickeable */
+  display: inline-block; /* Muestra cada filtro en línea como bloque */
+  padding: 0; /* Sin padding interno */
+  font-size: 18px; /* Tamaño de fuente de 18px */
+  font-weight: 500; /* Peso medio para el texto */
+  margin: 0 10px; /* Aplica un margen horizontal de 10px */
+  line-height: 1; /* Altura de línea igual a 1 para mantener el texto compacto */
+  margin-bottom: 5px; /* Margin inferior de 5px para separar elementos verticalmente */
+  transition: all 0.3s ease-in-out; /* Transición suave para cambios en estado hover o activo */
+}
+
+/* Cambia el color de los filtros al pasar el cursor o si están activos */
+.products .portfolio-filters li:hover,
+.products .portfolio-filters li.filter-active {
+  color: var(--accent-color); /* Cambia el color del texto a acento en estado hover o activo */
+}
+
+/* El primer elemento de la lista no tiene margen izquierdo */
+.products .portfolio-filters li:first-child {
+  margin-left: 0;
+}
+
+/* El último elemento de la lista no tiene margen derecho */
+.products .portfolio-filters li:last-child {
+  margin-right: 0;
+}
+
+/* Media query: para dispositivos con ancho máximo de 575px, ajusta el tamaño y márgenes de los filtros */
+@media (max-width: 575px) {
+  .products .portfolio-filters li {
+    font-size: 14px; /* Reduce el tamaño de fuente a 14px */
+    margin: 0 5px; /* Reduce el margen horizontal a 5px */
+  }
+}
+
+/* Selecciona el contenedor del contenido del portafolio */
+.products .portfolio-content {
+  position: relative; /* Posicionamiento relativo para establecer referencia para elementos hijos posicionados absolutamente */
+  overflow: hidden; /* Oculta cualquier contenido que sobrepase el contenedor */
+}
+
+/* Aplica una transición suave a todas las imágenes dentro del portafolio */
+.products .portfolio-content img {
+  transition: 0.3s; /* Transición de 0.3s para efectos de hover (como zoom) */
+}
+
+/* Selecciona el overlay de información del portafolio */
+.products .portfolio-content .portfolio-info {
+  opacity: 0; /* Inicialmente oculto (transparente) */
+  position: absolute; /* Posicionado absolutamente sobre la imagen */
+  inset: 0; /* Ocupa todo el contenedor (top, right, bottom, left: 0) */
+  z-index: 3; /* Aparece por encima de la imagen (z-index mayor) */
+  transition: all ease-in-out 0.3s; /* Transición suave para cambios en opacidad y posición */
+  background: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente negro */
+  padding: 15px; /* Aplica un padding de 15px en todos los lados */
+}
+
+/* Selecciona el encabezado <h4> dentro del overlay de información del portafolio */
+.products .portfolio-content .portfolio-info h4 {
+  font-size: 14px; /* Tamaño de fuente de 14px */
+  padding: 5px 10px; /* Padding vertical de 5px y horizontal de 10px */
+  font-weight: 400; /* Peso de fuente normal */
+  color: #ffffff; /* Color blanco para contraste sobre fondo oscuro */
+  display: inline-block; /* Se muestra como un bloque en línea */
+  background-color: var(--accent-color); /* Fondo en color de acento para resaltar el texto */
+}
+
+/* Selecciona el párrafo (<p>) dentro del overlay de información del portafolio */
+.products .portfolio-content .portfolio-info p {
+  position: absolute; /* Posicionado absolutamente en el overlay */
+  bottom: 10px; /* Colocado 10px desde el fondo del contenedor */
+  text-align: center; /* Texto centrado horizontalmente */
+  display: inline-block; /* Se muestra como inline-block para permitir ajustes de tamaño */
+  left: 0; /* Alineado a la izquierda */
+  right: 0; /* Alineado a la derecha para ocupar el ancho completo */
+  font-size: 16px; /* Tamaño de fuente de 16px */
+  font-weight: 600; /* Peso seminegrita para mayor énfasis */
+  color: rgba(255, 255, 255, 0.8); /* Color blanco con opacidad del 80% para suavizar */
+}
+
+/* Selecciona los enlaces de vista previa y detalles dentro del overlay */
+.products .portfolio-content .portfolio-info .preview-link,
+.products .portfolio-content .portfolio-info .details-link {
+  position: absolute; /* Posicionados absolutamente para colocarlos en el centro del overlay */
+  left: calc(50% - 40px); /* Centra horizontalmente, ajustando 40px desde el centro */
+  font-size: 26px; /* Tamaño de fuente de 26px para que sean fácilmente visibles */
+  top: calc(50% - 14px); /* Centra verticalmente, ajustando 14px desde el centro */
+  color: #fff; /* Color blanco para contraste */
+  transition: 0.3s; /* Transición de 0.3s para cambios en hover */
+  line-height: 1.2; /* Línea de altura de 1.2 para asegurar buena legibilidad */
+}
+
+/* Al pasar el cursor sobre los enlaces de vista previa o detalles, cambia su color */
+.products .portfolio-content .portfolio-info .preview-link:hover,
+.products .portfolio-content .portfolio-info .details-link:hover {
+  color: var(--accent-color); /* Cambia a color de acento cuando se hace hover */
+}
+
+/* Estilos específicos para el enlace de detalles */
+.products .portfolio-content .portfolio-info .details-link {
+  left: 50%; /* Posiciona este enlace exactamente en el centro horizontal */
+  font-size: 34px; /* Aumenta el tamaño de fuente a 34px para mayor énfasis */
+  line-height: 0; /* Establece la altura de la línea a 0 para un ajuste perfecto del ícono */
+}
+
+/* Cuando se hace hover sobre el contenedor del portafolio, el overlay se muestra */
+.products .portfolio-content:hover .portfolio-info {
+  opacity: 1; /* Cambia la opacidad a 1 para hacerlo completamente visible */
+}
+
+/* Al hacer hover sobre el contenedor del portafolio, se escala la imagen para efecto de zoom */
+.products .portfolio-content:hover img {
+  transform: scale(1.1); /* Aplica un escalado de 1.1 (110%) */
+}
+
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+/* Estilos para el título interno de la sección About */
+.about .inner-title {
+  font-size: 2.75rem; /* Define el tamaño de la fuente a 2.75 rem */
+  font-weight: 700; /* Asigna un peso de fuente de 700 (negrita) */
+  margin: 30px 0; /* Aplica 30px de margen vertical (arriba y abajo) y 0 en los laterales */
+}
+
+/* Media query: para anchos de pantalla de al menos 991px */
+@media (min-width: 991px) {
+  .about .inner-title {
+    max-width: 65%; /* Limita el ancho máximo del título al 65% del contenedor */
+    margin: 0 0 80px 0; /* Ajusta el margen: 0 arriba, 0 derecha, 80px abajo, 0 izquierda */
+  }
+}
+
+/* Estilos para el contenedor de la historia ("our-story") en la sección About */
+.about .our-story {
+  padding: 40px; /* Aplica 40px de padding en todos los lados */
+  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+      /* Establece el fondo mezclando el color por defecto con 96% de transparencia */
+}
+
+/* Para pantallas de al menos 991px, ajusta el padding del contenedor "our-story" */
+@media (min-width: 991px) {
+  .about .our-story {
+    padding-right: 35%; /* Aplica un padding derecho del 35% para dar espacio a otros elementos */
+  }
+}
+
+/* Estilos para los encabezados h4 dentro de .our-story */
+.about .our-story h4 {
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  font-size: 1.1rem; /* Define el tamaño de la fuente a 1.1 rem */
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+      /* Aplica un color mezclado del color por defecto con 50% de transparencia */
+}
+
+/* Estilos para los encabezados h3 dentro de .our-story */
+.about .our-story h3 {
+  font-size: 2.25rem; /* Tamaño de fuente de 2.25 rem */
+  font-weight: 700; /* Fuente en negrita (700) */
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+      /* Aplica un color basado en el color por defecto con 20% de transparencia */
+}
+
+/* Elimina el margen inferior del último párrafo en .our-story */
+.about .our-story p:last-child {
+  margin-bottom: 0; /* Sin margen inferior */
+}
+
+/* Estilos para las listas dentro de la sección About */
+.about ul {
+  list-style: none; /* Elimina las viñetas de la lista */
+  padding: 0; /* Elimina el padding interno */
+  font-size: 15px; /* Define el tamaño de la fuente a 15px */
+}
+
+/* Estilos para cada elemento de la lista en About */
+.about ul li {
+  padding: 5px 0; /* Aplica 5px de padding vertical a cada ítem */
+  display: flex; /* Muestra el contenido en fila (flexbox) */
+  align-items: center; /* Centra verticalmente los elementos dentro de cada ítem */
+}
+
+/* Estilos para los íconos (<i>) dentro de las listas en About */
+.about ul i {
+  font-size: 1.25rem; /* Tamaño de fuente de 1.25 rem para los íconos */
+  margin-right: 0.5rem; /* Aplica 0.5 rem de margen a la derecha */
+  line-height: 1.2; /* Define la altura de línea a 1.2 para mejor espaciado */
+  color: var(--accent-color); /* Aplica el color de acento a los íconos */
+}
+
+/* Estilos para el ícono dentro de .watch-video en About */
+.about .watch-video i {
+  font-size: 2rem; /* Tamaño de fuente de 2 rem para el ícono de video */
+  transition: 0.3s; /* Transición de 0.3s para cambios suaves (por ejemplo, hover) */
+  color: var(--accent-color); /* Utiliza el color de acento */
+}
+
+/* Estilos para el enlace dentro de .watch-video en About */
+.about .watch-video a {
+  font-weight: 600; /* Fuente seminegrita (600) para resaltar */
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+      /* Aplica un color mezclado del color por defecto con 20% de transparencia */
+  margin-left: 8px; /* Margen izquierdo de 8px para separar del ícono */
+  transition: 0.3s; /* Transición de 0.3s para efectos de hover */
+}
+
+/* Cambia el color del enlace cuando se hace hover en .watch-video */
+.about .watch-video:hover a {
+  color: var(--accent-color); /* Cambia a color de acento al pasar el cursor */
+}
+
+/* Estilos para el contenedor de la imagen en About */
+.about .about-img {
+  min-height: 400px; /* Define una altura mínima de 400px para el contenedor */
+  position: relative; /* Posiciona el contenedor de forma relativa para posicionar la imagen correctamente */
+}
+
+/* Media query: Para pantallas de al menos 992px, ajusta la posición de .about-img */
+@media (min-width: 992px) {
+  .about .about-img {
+    position: absolute; /* Cambia a posición absoluta para superponer la imagen en el diseño */
+    top: 0; /* Ubica la imagen en la parte superior del contenedor padre */
+    right: 0; /* Alinea la imagen al borde derecho */
+    min-height: 600px; /* Incrementa la altura mínima a 600px en pantallas grandes */
+  }
+}
+
+/* Estilos para las imágenes dentro de .about-img */
+.about .about-img img {
+  position: absolute; /* Posición absoluta para que la imagen ocupe completamente el contenedor */
+  inset: 0; /* Ubica la imagen a 0 en todos los lados (top, right, bottom, left) */
+  display: block; /* Muestra la imagen como bloque */
+  width: 100%; /* Ancho del 100% del contenedor */
+  height: 100%; /* Alto del 100% del contenedor */
+  object-fit: cover; /* La imagen se recorta para cubrir el contenedor sin perder proporción */
+  object-position: center; /* Centra la imagen en el contenedor */
+  z-index: 1; /* Asegura que la imagen se muestre detrás de otros elementos superpuestos */
+}
+
+/*--------------------------------------------------------------
+# Item Details Section
+--------------------------------------------------------------*/
+
+/* Selecciona las imágenes dentro del slider de detalles del portafolio */
+.item .portfolio-details-slider img {
+  width: 100%; /* Las imágenes ocupan el ancho completo del contenedor */
+}
+
+/* Selecciona la envoltura (wrapper) de Swiper en la sección de detalles de proyectos */
+.item .swiper-wrapper {
+  height: auto; /* La altura se ajusta automáticamente al contenido */
+}
+
+/* Selecciona los botones de navegación (anterior y siguiente) de Swiper */
+.item .swiper-button-prev,
+.item .swiper-button-next {
+  width: 48px; /* Ancho fijo de 48px para los botones */
+  height: 48px; /* Alto fijo de 48px para los botones */
+}
+
+/* Selecciona los pseudo-elementos :after de los botones de navegación de Swiper */
+.item .swiper-button-prev:after,
+.item .swiper-button-next:after {
+  color: rgba(255, 255, 255, 0.8); /* Aplica color blanco con 80% de opacidad para el ícono */
+  background-color: rgba(0, 0, 0, 0.15); /* Fondo negro con 15% de opacidad */
+  font-size: 24px; /* Tamaño de fuente de 24px para el contenido del botón */
+  border-radius: 50%; /* Bordes redondeados para formar un círculo */
+  width: 48px; /* Ancho de 48px */
+  height: 48px; /* Alto de 48px */
+  display: flex; /* Usa Flexbox para centrar el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  transition: 0.3s; /* Transición de 0.3s para cambios en hover */
+}
+
+/* Al pasar el cursor sobre los botones de Swiper, se cambia el fondo */
+.item .swiper-button-prev:hover:after,
+.item .swiper-button-next:hover:after {
+  background-color: rgba(0, 0, 0, 0.3); /* Fondo se oscurece a 30% de opacidad en hover */
+}
+
+/* Media query: Oculta los botones de navegación en dispositivos con ancho máximo de 575px */
+@media (max-width: 575px) {
+  .item .swiper-button-prev,
+  .item .swiper-button-next {
+    display: none; /* Oculta los botones en pantallas pequeñas */
+  }
+}
+
+/* Selecciona la paginación de Swiper en la sección de detalles del proyecto */
+.item .swiper-pagination {
+  margin-top: 20px; /* Aplica un margen superior de 20px */
+  position: relative; /* Posiciona la paginación de forma relativa */
+}
+
+/* Selecciona cada bullet en la paginación de Swiper */
+.item .swiper-pagination .swiper-pagination-bullet {
+  width: 10px; /* Ancho fijo de 10px para cada bullet */
+  height: 10px; /* Alto fijo de 10px para cada bullet */
+  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+      /* Aplica un color mezclado del color por defecto con 85% de transparencia */
+  opacity: 1; /* Totalmente opaco */
+}
+
+/* Estilos para el bullet activo en la paginación */
+.item .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color); /* Cambia el color del bullet activo a --accent-color */
+}
+
+/* Selecciona el encabezado <h3> dentro de .portfolio-info en la sección de detalles del proyecto */
+.item .portfolio-info h3 {
+  font-size: 22px; /* Tamaño de fuente de 22px */
+  font-weight: 700; /* Texto en negrita (700) */
+  margin-bottom: 20px; /* Aplica 20px de margen inferior */
+  padding-bottom: 20px; /* Agrega 20px de padding inferior para separación decorativa */
+  position: relative; /* Permite posicionar pseudo-elementos relativos */
+}
+
+/* Pseudo-elemento ::after en el encabezado de .portfolio-info para una línea decorativa */
+.item .portfolio-info h3:after {
+  content: ""; /* Contenido vacío, usado solo para decoración */
+  position: absolute; /* Posicionado absolutamente respecto al h3 */
+  display: block; /* Se muestra como bloque para definir dimensiones */
+  width: 50px; /* Ancho de 50px para la línea */
+  height: 3px; /* Alto de 3px para una línea fina */
+  background: var(--accent-color); /* Color de fondo de la línea usa --accent-color */
+  left: 0; /* Alineado al borde izquierdo */
+  bottom: 0; /* Ubicado en la parte inferior del h3 */
+}
+
+/* Selecciona la lista de información dentro de .portfolio-info */
+.item .portfolio-info ul {
+  list-style: none; /* Elimina viñetas predeterminadas */
+  padding: 0; /* Sin padding */
+  font-size: 15px; /* Tamaño de fuente de 15px */
+}
+
+/* Selecciona cada ítem de la lista dentro de .portfolio-info */
+.item .portfolio-info ul li {
+  display: flex; /* Usa Flexbox para alinear el contenido */
+  flex-direction: column; /* Organiza los elementos en columna */
+  padding-bottom: 15px; /* Aplica 15px de padding inferior */
+}
+
+/* Selecciona elementos <strong> dentro de la lista de .portfolio-info */
+.item .portfolio-info ul strong {
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  font-weight: 400; /* Aplica un peso normal (400) */
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+      /* Aplica un color mezclado del color por defecto con 50% de transparencia */
+  font-size: 14px; /* Tamaño de fuente de 14px */
+}
+
+/* Selecciona el botón de visita (.btn-visit) dentro de .portfolio-info */
+.item .portfolio-info .btn-quote {
+  padding: 8px 40px; /* Padding de 8px vertical y 40px horizontal */
+  background: var(--accent-color); /* Fondo en el color de acento */
+  color: var(--contrast-color); /* Color del texto en alto contraste */
+  border-radius: 50px; /* Bordes redondeados para dar efecto "pill" */
+  transition: 0.3s; /* Transición de 0.3s para efectos hover */
+}
+
+/* Hover sobre el botón de visita cambia el fondo */
+.item .portfolio-info .btn-quote:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 50%);
+      /* Aplica un fondo mezclado con 20% de transparencia en hover */
+}
+
+/* Selecciona el encabezado <h2> dentro de .portfolio-description en la sección del proyecto */
+.item .portfolio-description h2 {
+  font-size: 26px; /* Tamaño de fuente de 26px */
+  font-weight: 700; /* Texto en negrita (700) */
+  margin-bottom: 20px; /* Aplica 20px de margen inferior */
+}
+
+/* Selecciona los párrafos dentro de .portfolio-description */
+.item .portfolio-description p {
+  padding: 0; /* Sin padding para mantener el diseño uniforme */
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+
+/* Estilos para cada item de información en la sección de contacto */
+.contact .info-item {
+  background-color: var(--surface-color); /* Fondo usando la variable de superficie */
+  padding: 20px 0 30px 0; /* Padding: 20px arriba, 0 laterales, 30px abajo */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Sombra para dar énfasis */
+}
+
+/* Estilos para los íconos dentro de los items de contacto */
+.contact .info-item i {
+  font-size: 20px; /* Tamaño de fuente de 20px */
+  color: var(--accent-color); /* Aplica el color de acento */
+  width: 56px; /* Ancho fijo de 56px */
+  height: 56px; /* Alto fijo de 56px */
+  font-size: 24px; /* Redefine el tamaño de fuente a 24px para mayor visibilidad */
+  display: flex; /* Uso de flexbox para centrar el contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  border-radius: 4px; /* Bordes redondeados de 4px */
+  transition: all 0.3s ease-in-out; /* Transición suave para efectos de hover */
+  border-radius: 50%; /* Redefine a forma circular */
+  border: 2px dotted color-mix(in srgb, var(--accent-color), transparent 40%);
+      /* Aplica un borde punteado de 2px con un color mezclado al 40% de transparencia basado en --accent-color */
+}
+
+/* Estilos para los encabezados <h3> dentro de los items de contacto */
+.contact .info-item h3 {
+  font-size: 20px; /* Define el tamaño de fuente a 20px */
+  font-size: 18px; /* Reajusta a 18px (puede ser redundante) */
+  font-weight: 700; /* Fuente en negrita (700) */
+  margin: 10px 0; /* Aplica 10px de margen vertical */
+}
+
+/* Estilos para los párrafos dentro de los items de contacto */
+.contact .info-item p {
+  padding: 0; /* Sin padding */
+  margin-bottom: 0; /* Sin margen inferior */
+  font-size: 14px; /* Tamaño de fuente de 14px */
+}
+
+/* Estilos para el formulario de correo en la sección de contacto */
+.contact .php-email-form {
+  background-color: var(--surface-color); /* Fondo usando la variable de superficie */
+  height: 100%; /* Ocupa el 100% de la altura del contenedor */
+  padding: 30px; /* Padding interno de 30px */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Sombra para dar elevación */
+}
+
+/* Media query: para pantallas con ancho máximo de 575px, ajusta el padding del formulario de contacto */
+@media (max-width: 575px) {
+  .contact .php-email-form {
+    padding: 20px; /* Reduce el padding a 20px en pantallas pequeñas */
+  }
+}
+
+/* Estilos para los campos de entrada y textarea en el formulario de contacto */
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form textarea {
+  font-size: 14px; /* Tamaño de fuente de 14px */
+  padding: 10px 15px; /* Padding: 10px vertical y 15px horizontal */
+  box-shadow: none; /* Sin sombra */
+  border-radius: 0; /* Sin bordes redondeados */
+  color: var(--default-color); /* Color del texto según la variable global */
+  background-color: var(--surface-color); /* Fondo usando la variable de superficie */
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+      /* Borde usando el color por defecto mezclado con 80% de transparencia */
+}
+
+/* Estilos para el focus de los campos en el formulario de contacto */
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent-color); /* Al recibir foco, el borde cambia al color de acento */
+}
+
+/* Estilos para el placeholder en los campos de entrada */
+.contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+      /* Placeholder con el color por defecto mezclado con 70% de transparencia */
+}
+
+/* Estilos para el botón de envío en el formulario de contacto */
+.contact .php-email-form button[type=submit] {
+  color: var(--contrast-color); /* Texto del botón en color contrastante */
+  background: var(--accent-color); /* Fondo en color de acento */
+  border: 0; /* Sin borde */
+  padding: 10px 30px; /* Padding: 10px vertical y 30px horizontal */
+  transition: 0.4s; /* Transición de 0.4s para cambios en hover */
+  border-radius: 50px; /* Bordes redondeados para darle una forma de botón "pill" */
+}
+
+/* Estilos para el hover sobre el botón de envío */
+.contact .php-email-form button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+      /* Al pasar el cursor, el fondo se mezcla con 20% de transparencia del color de acento */
+}
+

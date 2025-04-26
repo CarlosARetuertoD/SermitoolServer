@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Sermitool - Nosotros</title>
+    <meta name="description" content="Conoce más sobre Sermitool, proveedor líder en equipos de perforación minera.">
+    <meta name="keywords" content="Sermitool, minería, perforación, OEM, equipos mineros, Sudáfrica">
+
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+    <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect"> 
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+  </head>
+
+  <body class="about-page">
+
+    {% include 'partials/header.html' %}
+
+    <main class="main">
+      
+      {% include 'partials/head_page.html' with page_title='Nosotros' breadcrumb_current='Nosotros' %}
+
+      <section id="about" class="about section">
+        <div class="container">
+          <div class="row position-relative align-items-center">
+
+            <!-- ======= IMAGEN NOSOTROS ======= -->
+            <div class="col-lg-6 about-img" data-aos="zoom-out" data-aos-delay="200">
+              <img src="{% static 'img/nosotros-img.jpg' %}" alt="Sermitool empresa minera" class="img-fluid rounded">
+            </div>
+
+            <!-- ======= NUESTRA HISTORIA ======= -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <h2 class="inner-title">Sobre Nosotros</h2>
+              <div class="our-story">
+                <h4>Desde 1995</h4>
+                <h3>Nuestra Historia</h3>
+                <p>SERMITOOL PERU SRL es una empresa fundada en Arequipa – Perú, especializada en proveer equipos de perforación y componentes para la industria minera. Nos enfocamos en ofrecer productos de alta calidad y un servicio que cumpla con los más altos estándares técnicos y profesionales.</p>
+                <p>Desde el 2015, establecimos una alianza estratégica con <strong>NASA ENGINEERING de Sudáfrica</strong>, pionera en la fabricación de equipos OEM para empresas mineras líderes como SECO, BOART LONGYEAR y TRANTER.</p>
+                <ul>
+                  <li><i class="bi bi-check-circle"></i> Equipos de perforación con tecnología de punta</li>
+                  <li><i class="bi bi-check-circle"></i> Componentes OEM certificados</li>
+                  <li><i class="bi bi-check-circle"></i> Comprometidos con la mejora continua</li>
+                </ul>
+                <p>Nuestra política es brindar soluciones técnicas sólidas, relaciones de largo plazo y una atención personalizada que supere las expectativas de nuestros clientes.</p>
+                <div class="watch-video d-flex align-items-center position-relative">
+                  <i class="bi bi-play-circle"></i>
+                  <a href="https://www.youtube.com/watch?v=MoViMMZURtA&ab_channel=ADIASOFTESPA%C3%91OL" class="glightbox stretched-link">Ver Video</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      
+      <!-- ======= MISION VISION  ======= -->
+      <section id="mision-vision" class="section">
+        <div class="container">
+          <div class="row gy-4" data-aos="fade-up">
+            <div class="col-lg-4">
+              <div class="card h-100 p-4 shadow-sm">
+                <h4 class="text-primary">Misión</h4>
+                <p>Proveer productos y soluciones para perforación minera con los más altos estándares de calidad, generando satisfacción, confiabilidad y eficiencia en nuestros clientes, impulsando el desarrollo industrial del país.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="card h-100 p-4 shadow-sm">
+                <h4 class="text-success">Visión</h4>
+                <p>Ser reconocidos como una empresa referente en el sector minero a nivel global, destacando por la calidad de nuestros productos, innovación tecnológica y relaciones comerciales de confianza.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="card h-100 p-4 shadow-sm">
+                <h4 class="text-warning">Valores</h4>
+                <ul class="list-unstyled mb-0">
+                  <li><i class="bi bi-check-circle-fill text-warning me-2"></i>Integridad</li>
+                  <li><i class="bi bi-check-circle-fill text-warning me-2"></i>Compromiso</li>
+                  <li><i class="bi bi-check-circle-fill text-warning me-2"></i>Lealtad</li>
+                  <li><i class="bi bi-check-circle-fill text-warning me-2"></i>Servicio al cliente</li>
+                  <li><i class="bi bi-check-circle-fill text-warning me-2"></i>Responsabilidad</li>
+                  <li><i class="bi bi-check-circle-fill text-warning me-2"></i>Puntualidad</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    {% include 'partials/footer.html' %}
+
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <div id="preloader"></div>
+
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

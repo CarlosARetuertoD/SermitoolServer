@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es"> 
+
+  <head>
+    <meta charset="utf-8">
+    <title>Sermitool - Servicios</title> 
+    <meta name="description" content="Servicios de SERMITOOL para minería y fabricación de componentes OEM.">
+    <meta name="keywords" content="Servicios minería, componentes mineros, diseño, fabricación, repuestos">
+
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+    <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect"> 
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+  </head>
+
+  <body class="services-page">
+
+    {% include 'partials/header.html' %}
+
+    <main class="main">
+    
+      {% include 'partials/head_page.html' with page_title='Nuestros Servicios' breadcrumb_current='Servicios' %}
+
+      <section id="services" class="services section light-background">
+        <div class="container">
+          <div class="row gy-4">
+            <!-- Servicio 1: Tornería y Mecanizado de Precisión -->
+            <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="fa-solid fa-gear"></i>
+                </div>
+                <h3>Tornería y Mecanizado de Precisión</h3> 
+                <p>
+                  Fabricación y reparación de piezas metálicas con tolerancias ajustadas, utilizando tornos convencionales y herramientas de alta precisión para aplicaciones mineras críticas.
+                </p> 
+              </div>
+            </div>
+
+            <!-- Servicio 2: Producción con Máquinas CNC -->
+            <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="fa-solid fa-cogs"></i> <!-- Ícono personalizado (engranajes) -->
+                </div>
+                <h3>Producción con Máquinas CNC</h3>
+                <p>
+                  Procesamiento automatizado de piezas mediante centros CNC para garantizar repetibilidad, calidad dimensional y acabados óptimos en componentes mecánicos de alto desgaste.
+                </p>
+              </div>
+            </div>
+
+            <!-- Servicio 3: Diseño CAD/CAM de Piezas Técnicas -->
+            <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="fa-solid fa-drafting-compass"></i> <!-- Ícono personalizado (compás de dibujo) -->
+                </div>
+                <h3>Diseño CAD/CAM de Piezas Técnicas</h3>
+                <p>
+                  Modelado tridimensional, simulación de esfuerzos y generación de trayectorias de mecanizado para componentes personalizados, optimizados para condiciones extremas de operación.
+                </p>
+              </div>
+            </div>
+
+            <!-- Servicio 4: Fabricación en Serie de Repuestos Industriales -->
+            <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="fa-solid fa-industry"></i> <!-- Ícono personalizado (industria) -->
+                </div>
+                <h3>Fabricación en Serie de Repuestos Industriales</h3>
+                <p>
+                  Producción a gran escala de piezas como casquillos, ejes, retenedores, adaptadores y elementos de desgaste, dirigidos a flotas y líneas de producción en minería subterránea.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+   
+    </main>
+
+    {% include 'partials/footer.html' %}
+
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+      <i class="bi bi-arrow-up-short"></i> 
+    </a>
+
+    <div id="preloader"></div>
+
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+
+</html>

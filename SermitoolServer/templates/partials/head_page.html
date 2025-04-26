@@ -1,0 +1,15 @@
+{% load static %}
+<div class="page-title dark-background" style="background-image: url('{% static "img/backgrounds/page-title-bg.jpg" %}');">
+  <div class="container position-relative">
+    <h1>{{ page_title }}</h1>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        {% if breadcrumb_current == "Item" %}
+          <li><a href="{% url 'products' %}">Productos</a></li>
+        {% endif %}
+        <li class="current">{{ breadcrumb_current }}</li>
+      </ol>
+    </nav>
+  </div>
+</div>
